@@ -58,6 +58,22 @@ La respuesta, en caso de ser correcta, tendrá el siguiente formato:
 }
 ```
 
+En el caso de que la posición o el mensaje no puedan ser determinados, responderá de la siguiente manera:
+```
+{
+    "info": "Message or position cannot be determined",
+    "message": "Resource not found"
+}
+```
+
+En el caso de que el JSON sea inválido, responderá se la siguiente manera:
+```
+{
+    "info": "Invalid JSON",
+    "message": "Bad request"
+}
+```
+
 ### POST /api/v1/topsecret_split/<nombre_satelite>
 El request deberá tener el siguiente formato:
 ```
@@ -82,6 +98,22 @@ La respuesta, en caso de ser correcta, tendrá el siguiente formato:
 }
 ```
 
+En el caso de que el nombre sea inválido, responderá se la siguiente manera:
+```
+{
+    "info": "Invalid name",
+    "message": "Bad request"
+}
+```
+
+En el caso de que el JSON sea inválido, responderá se la siguiente manera:
+```
+{
+    "info": "Invalid JSON",
+    "message": "Bad request"
+}
+```
+
 ### GET /api/v1/topsecret_split
 Es necesario que, para obtener una respuesta correcta, se hayan cargado los datos de los sátelites mediante el método POST del mismo endpoint.
 
@@ -93,6 +125,22 @@ La respuesta, en caso de ser correcta y tener los datos necesarios, tendrá el s
         "y": 102.8
     },
     "message": "este es un mensaje secreto"
+}
+```
+
+En el caso de que la posición o el mensaje no puedan ser determinados, responderá de la siguiente manera:
+```
+{
+    "info": "Message or position cannot be determined",
+    "message": "Resource not found"
+}
+```
+
+En el caso de que falten datos de los satélites, responderá se la siguiente manera:
+```
+{
+    "info": "Information is missing",
+    "message": "Bad request"
 }
 ```
 
